@@ -16,10 +16,10 @@ function addDatesToCalendar(){
   // end of the bits you need to update  
 
   const eventCal = CalendarApp.getCalendarById(calendarID);
-  const earnings = spreadsheet.getRange(spreadSheetRange).getValues();
+  const myEvents = spreadsheet.getRange(spreadSheetRange).getValues();
 
-  earnings.forEach(earning => {
-      eventCal.createAllDayEvent(earning[eventName],  new Date(earning[eventDate]));
+  myEvents.forEach(myEvent => {
+      eventCal.createAllDayEvent(myEvent[eventName],  new Date(myEvent[eventDate]));
   })
 
 }
